@@ -116,7 +116,7 @@ const MISIONES = [
       tecnico: "img-vid_Luna/apollo14-tecnico.png"
     },
     alt: {
-      casual:  "Apollo 14 on the lunar surface,
+      casual:  "Apollo 14 on the lunar surface",
       tecnico: "Apollo 14 scientific team on the Moon"
     },
     credito: {
