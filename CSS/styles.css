@@ -1,0 +1,536 @@
+/*Datos base para la página web, (Principal, Luna y Marte)*/
+
+:root {
+  --bg: #131E29;
+  --negro-fondo: #0b0b0b;
+  --fg: #FEFFFA;
+  --etiquetas: #1B2B85;
+  --subida: 35vh;
+
+  --t: 0;
+  --brillo: 255, 255, 255;
+  --brillo-sol: 255, 192, 0;
+  --brillo-tierra: 40, 120, 255;
+  --brillo-marte: 200, 40, 30;
+
+  --altura-final: 40vh;          /* alto de la parte negra al final del scroll */
+  --curva: 12vh;                 /* qué tan redondeado queda abajo */
+  --brillo-sol: 255, 192, 0;
+
+  --fuente-titulo: "NASA TITULO", system-ui, sans-serif;
+  --fuente-subtitulos: "Orbitron", system-ui, sans-serif;
+  --fuente-texto: "Atkinson Hyperlegible", system-ui, sans-serif;
+  --fuente-nota: "Share Tech Mono", ui-monospace, monospace;
+  --fuente-challenge: "Steelfish", system-ui, sans-serif;
+}
+
+/*Datos <body> para la página principal (principal.html)*/
+
+.structure {
+  background: var(--bg);
+}
+
+.recorrido { 
+  height: 300vh; 
+}
+
+.portada{
+  position: sticky; top: 0; height: 100vh;
+  display: flex; flex-direction: column;
+  --k: clamp(0, var(--t) * 4, 1);
+}
+
+.sistema-solar {
+  position: relative; overflow: hidden; flex: none;
+  background: var(--negro-fondo);
+  height: calc(100vh - var(--t) * (100vh - var(--altura-final)));
+  border-radius: 0 0 65% 65% / 0 0 calc(var(--t) * var(--curva)) calc(var(--t) * var(--curva));
+  display: grid;
+  place-items: center;
+  padding: 4rem 2rem;
+}
+
+.t1 {
+  text-align: center;
+  font-family: var(--fuente-titulo);
+  color: var(--fg);
+
+  animation: barrido-entrada 1s cubic-bezier(.8, 0, .8, .3) reverse both paused;
+  animation-delay: calc(var(--k) * -1s);
+}
+
+.titulo {
+  margin: 0;
+  font-size: clamp(1.4rem, 3vw, 2rem);
+  line-height: 1.2;
+  text-shadow: 0 0 80px rgba(var(--brillo), .45);
+  animation: barrido-entrada 1.2s cubic-bezier(.2, .7, .2, 1) both;
+}
+
+.palabra-grande {
+  font-size: clamp(2.5rem, 5.5vw, 5rem);
+  line-height: .9;
+  letter-spacing: .01em;
+  text-shadow: 0 0 80px rgba(var(--brillo), .55);
+  animation: barrido-entrada 1.2s cubic-bezier(.2, .7, .2, 1) both;
+}
+
+.t1 .titulo:nth-child(2) { animation-delay: .2s; }
+.t1 .titulo:nth-child(3) { animation-delay: .4s; }
+
+@keyframes barrido-entrada {
+  from { clip-path: inset(-200px 100% -200px 0); transform: translateX(-30px); filter: blur(8px); }
+  to   { clip-path: inset(-200px -200px -200px -200px); transform: none; filter: blur(0); }
+}
+
+.esquinas {
+  position: absolute; inset: 1.5rem 2rem auto 2rem;   /* arriba, derecha, abajo, izquierda */
+  display: flex; justify-content: space-between; align-items: flex-start;
+  z-index: 2;
+  opacity: calc(1 - var(--k));                        
+  transform: translateY(calc(var(--k) * -20px)); 
+}
+
+.boton-evento {
+  display: flex; flex-direction: column; align-items: center;
+  padding: .5rem 2.2rem;
+  background: var(--etiquetas);
+  border-radius: 999px;
+  font-family: var(--fuente-challenge);
+  font-size: clamp(1rem, 2vw, 1.6rem);
+  line-height: 1;
+  color: var(--fg);
+  text-decoration: none;
+  transition: transform .3s ease;
+}
+.boton-evento .rojo { color: #E52406; }
+
+.boton-equipo {
+  display: grid; place-items: center;
+  width: clamp(48px, 5vw, 96px); aspect-ratio: 1;
+  background: var(--etiquetas);
+  border-radius: 50%;
+  transition: transform .3s ease;
+}
+.boton-equipo img { width: 60%; height: auto; }
+
+.boton-evento:hover, .boton-equipo:hover { transform: scale(1.06); }
+.boton-evento:focus-visible, .boton-equipo:focus-visible { outline: 3px solid var(--fg); outline-offset: 3px; }
+
+      /*Para etiquetas*/
+
+.recorrido.ui-oculta .esquinas a { pointer-events: none; }
+
+.sol {
+  --tam: clamp(80px, 14vh, 150px);
+  --sol-arriba-final: .5rem;     /* distancia al borde de arriba al final */
+  position: absolute;
+  left: 50%;
+  width: var(--tam);
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: #ffc107;
+  box-shadow: 0 0 60px rgba(var(--brillo-sol), .35);
+  transform: translateX(-50%);
+  top: calc((1 - var(--t)) * (100% - var(--tam) / 2) + var(--t) * var(--sol-arriba-final));
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+/*ESTRELLAS*/
+
+.estrellas {
+  position: absolute; top: 0; left: 0;
+  width: 100%; height: 100vh;               /* alto fijo: no se encoge con la parte negra */
+  pointer-events: none;
+  transform: translateY(calc(var(--t) * var(--subida) * -1));   /* suben con el scroll */
+}
+
+.estrella {
+  position: absolute;
+  left: var(--x); top: var(--y);
+  width: var(--tam); aspect-ratio: 1;
+  border-radius: 50%;
+  background: #fff;
+  box-shadow: 0 0 6px rgba(var(--brillo), .6);   /* brillo fijo */
+}
+
+.estrella.brilla {
+  /* --pulso va de 0 a 1 y vuelve a 0, según el scroll y la fase de cada estrella */
+  --pulso: max(0, sin(calc(var(--t) * var(--vel) * 1turn + var(--fase) * 1turn)));
+  box-shadow:
+    0 0 calc(4px + var(--pulso) * 14px)
+      calc(var(--pulso) * 3px)
+      rgba(var(--brillo), calc(.4 + var(--pulso) * .6));
+}
+
+/* El título debe quedar por encima de las estrellas */
+.t1 { position: relative; z-index: 1; }
+
+.orbitas {
+  position: absolute; left: 50%; top: 50%;
+  width: 100vw; aspect-ratio: 5 / 2;
+  transform: translate(-50%, -50%);
+  overflow: visible;
+  pointer-events: none;
+  /* de 0 a 1 entre --t = .4 y --t = .85: cuánto se ha dibujado la línea */
+  --draw: clamp(0, (var(--t) - .4) / .45, 1);
+}
+
+.linea {
+  fill: none;
+  stroke: #fff;
+  stroke-width: 2.5;
+  stroke-dashoffset: calc(var(--L) * (1 - var(--draw)) * 1px);
+}
+
+/* los planetas aparecen cuando las líneas ya casi terminan */
+.planeta { opacity: clamp(0, (var(--t) - .8) * 5, 1); }
+.tierra  { filter: drop-shadow(0 0 14px rgba(var(--brillo-tierra), .7)); }
+.marte   { filter: drop-shadow(0 0 14px rgba(var(--brillo-marte), .6)); }
+
+/* ===== TARJETAS ===== */
+.tarjetas {
+  flex: 1; min-height: 0;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-rows: minmax(0, 1fr);
+  gap: clamp(1.5rem, 6vw, 8rem);
+  padding: 1.5rem clamp(1rem, 10vw, 10rem) 2rem;
+  opacity: clamp(0, calc((var(--t) - .6) * 2.5), 1);
+}
+/* mientras no se ven, tampoco se pueden clicar ni alcanzar con Tab */
+.tarjetas a { visibility: hidden; }
+.recorrido.tarjetas-activas .tarjetas a { visibility: visible; }
+
+.tarjeta {
+  position: relative; overflow: hidden; display: block;
+  background: #050505;
+  border-radius: clamp(28px, 4vw, 56px);
+  border: 1px solid rgba(var(--brillo), .08);
+  transition: transform .5s cubic-bezier(.16, 1, .3, 1), filter .5s ease;
+}
+
+.estrellas-tarjeta { position: absolute; inset: 0; pointer-events: none; }
+
+/* 1) texto: detrás de la imagen (z-index menor) */
+.rotulo {
+  position: absolute; z-index: 1;
+  left: 50%; top: 6%;
+  transform: translateX(-50%);
+  font-family: var(--fuente-subtitulos);
+  font-size: clamp(2.5rem, 7vw, 7rem);
+  line-height: 1;
+  color: var(--fg);
+  opacity: 0;
+  transition: opacity .3s ease;
+}
+
+/* 2) imagen: al frente */
+.tarjeta img {
+  position: absolute; z-index: 2;
+  left: 50%; bottom: 8%;
+  height: 62%; width: auto;           /* solo el alto, el ancho se ajusta solo */
+  transform: translateX(-50%);
+  mix-blend-mode: screen;             /* el negro de la foto se vuelve transparente */
+}
+
+/* 3) animación del texto: de pequeño a grande, rápido al inicio y frenando al final */
+@keyframes surgir {
+  from { transform: translateX(-50%) scale(.3); }
+}
+
+/* ===== EFECTOS AL PASAR EL MOUSE (solo en dispositivos con mouse) ===== */
+@media (hover: hover) {
+  .tarjeta:hover, .tarjeta:focus-visible { transform: scale(1.06); z-index: 3; }
+
+  .tarjeta:hover .rotulo, .tarjeta:focus-visible .rotulo {
+    opacity: 1;
+    animation: surgir .8s cubic-bezier(.16, 1, .3, 1);
+  }
+
+  /* difuminar la otra tarjeta */
+  .tarjetas:has(.tarjeta:hover) .tarjeta:not(:hover) { filter: blur(10px) brightness(.6); }
+
+  /* difuminar también el fondo negro con el sistema solar */
+  .sistema-solar { transition: filter .5s ease; }
+  .portada:has(.tarjeta:hover) .sistema-solar { filter: blur(8px) brightness(.7); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .tarjeta:hover .rotulo { animation: none; }
+}
+
+/*Datos <body> para la página de la Luna (luna.html)*/
+/* ===== Página de la Luna ===== */
+:root {
+  --luna-fondo: #00002e;
+  --panel: #3f3f59;
+  --titulo-luna: #fbfbc8;
+}
+
+body.pagina-luna {
+  margin: 0; height: 100vh; height: 100dvh; overflow: hidden;
+  background: var(--luna-fondo); color: var(--fg);
+  font-family: var(--fuente-texto);
+}
+
+.escena { position: fixed; inset: 0; transition: filter .5s ease; }
+.escena.difuminada { filter: blur(10px) brightness(.6); }
+
+.fondo-estrellas { position: absolute; inset: 0; pointer-events: none; }
+#luna-canvas { position: absolute; inset: 0; width: 100%; height: 100%; display: block; }
+#marcadores { position: absolute; inset: 0; pointer-events: none; }
+
+/* ===== Botón de regreso y flechas ===== */
+.btn-atras {
+  position: fixed; top: 1.5rem; left: clamp(1rem, 4vw, 4.5rem); z-index: 30;
+  display: grid; place-items: center;
+  width: clamp(48px, 5vw, 96px); aspect-ratio: 1; border-radius: 50%;
+  background: rgba(130, 130, 160, .5); transition: transform .3s ease;
+}
+.btn-atras:hover { transform: scale(1.08); }
+.btn-atras svg, .flecha svg, .cerrar svg {
+  width: 45%; fill: none; stroke: #fff; stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round;
+}
+
+.flecha {
+  position: absolute; top: 50%; z-index: 5;
+  width: clamp(44px, 5vw, 72px); aspect-ratio: 1; padding: 0;
+  display: grid; place-items: center; cursor: pointer;
+  background: transparent; border: 0; border-radius: 50%;
+  transform: translateY(-50%); transition: transform .25s ease, background .25s ease;
+}
+.flecha.izq { left: max(.5rem, calc(50% - min(46vh, 44vw) - 4rem)); }
+.flecha.der { right: max(.5rem, calc(50% - min(46vh, 44vw) - 4rem)); }
+.flecha:hover { background: rgba(255, 255, 255, .12); transform: translateY(-50%) scale(1.1); }
+.flecha svg { width: 55%; stroke-width: 1.4; }
+:is(.flecha, .cerrar, .tab, .marcador, .btn-atras):focus-visible { outline: 3px solid #fff; outline-offset: 3px; }
+
+/* ===== Puntos sobre la Luna ===== */
+.marcador {
+  position: absolute; left: 0; top: 0; width: 26px; height: 26px; margin: -13px 0 0 -13px;
+  padding: 0; border-radius: 50%; border: 2px solid #fff; cursor: pointer;
+  background: rgba(255, 255, 255, .15); pointer-events: auto;
+  transition: transform .25s ease, background .25s ease;
+}
+.marcador:hover, .marcador:focus-visible { transform: scale(1.25); background: rgba(255, 255, 255, .4); }
+
+.cartel {
+  position: absolute; left: 34px; bottom: 12px; z-index: 10;
+  min-width: 11rem; padding: .7rem 1rem .5rem; text-align: left;
+  background: var(--panel); border: 2px solid #0a0a3a; border-radius: 22px;
+  font-family: var(--fuente-subtitulos); color: var(--titulo-luna);
+  opacity: 0; transform: translateY(8px); pointer-events: none; white-space: nowrap;
+  transition: opacity .25s ease, transform .35s cubic-bezier(.16, 1, .3, 1);
+}
+.cartel::before { content: ""; position: absolute; left: -9px; bottom: -1px; width: 9px; height: 2px; background: #fff; }
+.cartel .nom { display: block; font-size: 1rem; }
+.cartel .num { display: block; text-align: right; font-size: 1.4rem; }
+.marcador:hover .cartel, .marcador:focus-visible .cartel { opacity: 1; transform: none; }
+
+/* ===== Ventana de la misión ===== */
+.modal {
+  position: fixed; inset: 0; z-index: 20; display: grid; place-items: center;
+  padding: clamp(.5rem, 3vw, 2.5rem);
+  visibility: hidden; pointer-events: none; transition: visibility 0s .6s;
+}
+.modal.abierta { visibility: visible; pointer-events: auto; transition: none; }
+
+.panel {
+  position: relative; width: min(1400px, 100%); max-height: 100%; overflow: auto;
+  padding: clamp(1.5rem, 4vw, 4rem); background: var(--panel);
+  border-radius: clamp(32px, 6vw, 96px);
+  /* cerrada: un recorte diminuto en el centro; abierta: ocupa todo */
+  clip-path: inset(48% 48% 48% 48% round 60px); opacity: 0;
+  transition: clip-path .5s ease, opacity .3s ease .1s;
+}
+.modal.abierta .panel {
+  clip-path: inset(0 round clamp(32px, 6vw, 96px)); opacity: 1;
+  transition: clip-path .75s cubic-bezier(.16, 1, .3, 1), opacity .25s ease;
+}
+
+.m-cab { position: relative; display: flex; flex-wrap: wrap; align-items: center; gap: 1rem 1.5rem; padding: 0 4.5rem 0 clamp(0px, 7vw, 6rem); }
+.m-cab h2 { margin: 0; font-family: var(--fuente-subtitulos); font-weight: 400; font-size: clamp(1.6rem, 4.5vw, 4rem); line-height: 1.1; color: var(--titulo-luna); }
+
+.tabs { display: flex; gap: .8rem; }
+.tab {
+  border: 0; border-radius: 999px; padding: .55rem 1.5rem; cursor: pointer;
+  font: inherit; font-size: 1rem; color: #fff; opacity: .55; transition: opacity .25s ease, box-shadow .25s ease;
+}
+.tab.casual { background: #2f7d1f; font-family: var(--fuente-subtitulos);}
+.tab.tecnico { background: #b30000; font-family: var(--fuente-subtitulos); }
+.tab[aria-selected="true"] { opacity: 1; box-shadow: 0 0 0 3px rgba(255, 255, 255, .75); }
+
+.cerrar {
+  position: absolute; top: 0; right: 0; width: clamp(44px, 5vw, 72px); aspect-ratio: 1; padding: 0;
+  display: grid; place-items: center; cursor: pointer; border: 0; border-radius: 50%;
+  background: rgba(160, 160, 170, .85); transition: transform .25s ease;
+}
+.cerrar:hover { transform: scale(1.08) rotate(90deg); }
+
+.m-cuerpo { display: grid; grid-template-columns: 1.5fr 1fr; gap: clamp(1.5rem, 4vw, 4rem); margin-top: 1.5rem; padding-left: clamp(0px, 7vw, 6rem); }
+.m-texto p { margin: 0 0 1rem; font-size: clamp(1rem, 1.6vw, 1.35rem); line-height: 1.65; }
+.m-fig { margin: 0; }
+.m-fig[hidden] { display: none; }
+.m-fig img { display: block; width: 100%; max-height: 60vh; object-fit: cover; border-radius: clamp(28px, 4vw, 56px); }
+.m-fig figcaption { margin-top: .6rem; font-family: var(--fuente-nota); font-size: .8rem; opacity: .75; }
+
+@media (max-width: 800px) {
+  .m-cuerpo { grid-template-columns: 1fr; padding-left: 0; }
+  .m-cab { padding-left: 0; padding-top: 3.2rem; }
+}
+
+/* ===== Contenido que baja desvaneciéndose al abrir ===== */
+@keyframes bajar { from { opacity: 0; transform: translateY(-26px); } }
+.modal.abierta .rev { animation: bajar .8s cubic-bezier(.16, 1, .3, 1) both; animation-delay: calc(.3s + var(--i) * .15s); }
+@keyframes cambiar { from { opacity: 0; transform: translateY(-14px); } }
+.m-texto.cambia { animation: cambiar .45s ease both !important; animation-delay: 0s !important; }
+
+@media (prefers-reduced-motion: reduce) {
+  .escena, .panel, .cartel, .flecha, .marcador { transition: none; }
+  .modal.abierta .rev, .m-texto.cambia { animation: none !important; }
+}
+
+/*Datos <body> para la página de Marte (marte.html)*/
+
+:root {
+  --luna-fondo: #00002e;
+  --panel-marte: #C4532B;
+  --titulo-marte: #fbfbc8;
+}
+
+body.pagina-luna {
+  margin: 0; height: 100vh; height: 100dvh; overflow: hidden;
+  background: var(--luna-fondo); color: var(--fg);
+  font-family: var(--fuente-texto);
+}
+
+.escena { position: fixed; inset: 0; transition: filter .5s ease; }
+.escena.difuminada { filter: blur(10px) brightness(.6); }
+
+.fondo-estrellas { position: absolute; inset: 0; pointer-events: none; }
+#luna-canvas { position: absolute; inset: 0; width: 100%; height: 100%; display: block; }
+#marcadores { position: absolute; inset: 0; pointer-events: none; }
+
+/* ===== Botón de regreso y flechas ===== */
+.btn-atras {
+  position: fixed; top: 1.5rem; left: clamp(1rem, 4vw, 4.5rem); z-index: 30;
+  display: grid; place-items: center;
+  width: clamp(48px, 5vw, 96px); aspect-ratio: 1; border-radius: 50%;
+  background: rgba(130, 130, 160, .5); transition: transform .3s ease;
+}
+.btn-atras:hover { transform: scale(1.08); }
+.btn-atras svg, .flecha svg, .cerrar svg {
+  width: 45%; fill: none; stroke: #fff; stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round;
+}
+
+.flecha {
+  position: absolute; top: 50%; z-index: 5;
+  width: clamp(44px, 5vw, 72px); aspect-ratio: 1; padding: 0;
+  display: grid; place-items: center; cursor: pointer;
+  background: transparent; border: 0; border-radius: 50%;
+  transform: translateY(-50%); transition: transform .25s ease, background .25s ease;
+}
+.flecha.izq { left: max(.5rem, calc(50% - min(46vh, 44vw) - 4rem)); }
+.flecha.der { right: max(.5rem, calc(50% - min(46vh, 44vw) - 4rem)); }
+.flecha:hover { background: rgba(255, 255, 255, .12); transform: translateY(-50%) scale(1.1); }
+.flecha svg { width: 55%; stroke-width: 1.4; }
+:is(.flecha, .cerrar, .tab, .marcador, .btn-atras):focus-visible { outline: 3px solid #fff; outline-offset: 3px; }
+
+/* ===== Puntos sobre la Luna ===== */
+.marcador {
+  position: absolute; left: 0; top: 0; width: 26px; height: 26px; margin: -13px 0 0 -13px;
+  padding: 0; border-radius: 50%; border: 2px solid #fff; cursor: pointer;
+  background: rgba(255, 255, 255, .15); pointer-events: auto;
+  transition: transform .25s ease, background .25s ease;
+}
+.marcador:hover, .marcador:focus-visible { transform: scale(1.25); background: rgba(255, 255, 255, .4); }
+
+.cartel {
+  position: absolute; left: 34px; bottom: 12px; z-index: 10;
+  min-width: 11rem; padding: .7rem 1rem .5rem; text-align: left;
+  background: var(--panel-marte); border: 2px solid #0a0a3a; border-radius: 22px;
+  font-family: var(--fuente-subtitulos); color: var(--titulo-marte);
+  opacity: 0; transform: translateY(8px); pointer-events: none; white-space: nowrap;
+  transition: opacity .25s ease, transform .35s cubic-bezier(.16, 1, .3, 1);
+}
+.cartel::before { content: ""; position: absolute; left: -9px; bottom: -1px; width: 9px; height: 2px; background: #fff; }
+.cartel .nom { display: block; font-size: 1rem; }
+.cartel .num { display: block; text-align: right; font-size: 1.4rem; }
+.marcador:hover .cartel, .marcador:focus-visible .cartel { opacity: 1; transform: none; }
+
+/* ===== Ventana de la misión ===== */
+.modal {
+  position: fixed; inset: 0; z-index: 20; display: grid; place-items: center;
+  padding: clamp(.5rem, 3vw, 2.5rem);
+  visibility: hidden; pointer-events: none; transition: visibility 0s .6s;
+}
+.modal.abierta { visibility: visible; pointer-events: auto; transition: none; }
+
+.panel {
+  position: relative; width: min(1400px, 100%); max-height: 100%; overflow: auto;
+  padding: clamp(1.5rem, 4vw, 4rem); background: var(--panel-marte);
+  border-radius: clamp(32px, 6vw, 96px);
+  /* cerrada: un recorte diminuto en el centro; abierta: ocupa todo */
+  clip-path: inset(48% 48% 48% 48% round 60px); opacity: 0;
+  transition: clip-path .5s ease, opacity .3s ease .1s;
+}
+.modal.abierta .panel {
+  clip-path: inset(0 round clamp(32px, 6vw, 96px)); opacity: 1;
+  transition: clip-path .75s cubic-bezier(.16, 1, .3, 1), opacity .25s ease;
+}
+
+.m-cab { position: relative; display: flex; flex-wrap: wrap; align-items: center; gap: 1rem 1.5rem; padding: 0 4.5rem 0 clamp(0px, 7vw, 6rem); }
+.m-cab h2 { margin: 0; font-family: var(--fuente-subtitulos); font-weight: 400; font-size: clamp(1.6rem, 4.5vw, 4rem); line-height: 1.1; color: var(--titulo-marte); }
+
+.tabs { display: flex; gap: .8rem; }
+.tab {
+  border: 0; border-radius: 999px; padding: .55rem 1.5rem; cursor: pointer;
+  font: inherit; font-size: 1rem; color: #fff; opacity: .55; transition: opacity .25s ease, box-shadow .25s ease;
+}
+.tab.casual { background: #2f7d1f; font-family: var(--fuente-subtitulos);}
+.tab.tecnico { background: #b30000; font-family: var(--fuente-subtitulos); }
+.tab[aria-selected="true"] { opacity: 1; box-shadow: 0 0 0 3px rgba(255, 255, 255, .75); }
+
+.cerrar {
+  position: absolute; top: 0; right: 0; width: clamp(44px, 5vw, 72px); aspect-ratio: 1; padding: 0;
+  display: grid; place-items: center; cursor: pointer; border: 0; border-radius: 50%;
+  background: rgba(160, 160, 170, .85); transition: transform .25s ease;
+}
+.cerrar:hover { transform: scale(1.08) rotate(90deg); }
+
+.m-cuerpo { display: grid; grid-template-columns: 1.5fr 1fr; gap: clamp(1.5rem, 4vw, 4rem); margin-top: 1.5rem; padding-left: clamp(0px, 7vw, 6rem); }
+.m-texto p { margin: 0 0 1rem; font-size: clamp(1rem, 1.6vw, 1.35rem); line-height: 1.65; }
+.m-fig { margin: 0; }
+.m-fig[hidden] { display: none; }
+.m-fig img { display: block; width: 100%; max-height: 60vh; object-fit: cover; border-radius: clamp(28px, 4vw, 56px); }
+.m-fig figcaption { margin-top: .6rem; font-family: var(--fuente-nota); font-size: .8rem; opacity: .75; }
+
+@media (max-width: 800px) {
+  .m-cuerpo { grid-template-columns: 1fr; padding-left: 0; }
+  .m-cab { padding-left: 0; padding-top: 3.2rem; }
+}
+
+/* ===== Contenido que baja desvaneciéndose al abrir ===== */
+@keyframes bajar { from { opacity: 0; transform: translateY(-26px); } }
+.modal.abierta .rev { animation: bajar .8s cubic-bezier(.16, 1, .3, 1) both; animation-delay: calc(.3s + var(--i) * .15s); }
+@keyframes cambiar { from { opacity: 0; transform: translateY(-14px); } }
+.m-texto.cambia { animation: cambiar .45s ease both !important; animation-delay: 0s !important; }
+
+@media (prefers-reduced-motion: reduce) {
+  .escena, .panel, .cartel, .flecha, .marcador { transition: none; }
+  .modal.abierta .rev, .m-texto.cambia { animation: none !important; }
+}
+
+/* Misiones que no están sobre la superficie (Marte) */
+.otras { position: absolute; left: 50%; bottom: 1.2rem; transform: translateX(-50%); z-index: 5;
+  display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: .6rem; width: min(94vw, 1000px); }
+.otras-titulo { width: 100%; text-align: center; font-family: var(--fuente-nota); font-size: .85rem; opacity: .8; }
+.otra { border: 2px solid #fff; border-radius: 999px; padding: .4rem 1rem; background: rgba(255, 255, 255, .08);
+  color: var(--fg); font-family: var(--fuente-subtitulos); font-size: .9rem; cursor: pointer; transition: background .25s ease, transform .25s ease; }
+.otra:hover { background: rgba(255, 255, 255, .25); transform: translateY(-2px); }
+.otra:focus-visible { outline: 3px solid #fff; outline-offset: 3px; }
+.otra b { margin-right: .5rem; font-weight: 400; opacity: .75; }

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ABANDONED but not FORGOTTEN | Dormant</title>
+
+
+    <link rel="stylesheet" href="CSS/styles.css">
+    <link rel="stylesheet" href="CSS/fonts.css">
+</head>
+<body class="structure">
+
+    <section class="recorrido">
+        <div class="portada">
+
+            <div class="sistema-solar">
+
+                <div class="estrellas" aria-hidden="true"></div>
+
+                <div class="sol" aria-hidden="true">
+                    <svg class="orbitas" viewBox="-1000 -400 2000 800">
+
+                        <path id="orbita-tierra" class="linea"
+                              d="M -1150 0 A 1150 160 0 0 0 1150 0 A 1150 160 0 0 0 -1150 0"/>
+                        <path id="orbita-marte" class="linea"
+                              d="M -1500 0 A 1500 250 0 0 0 1500 0 A 1500 250 0 0 0 -1500 0"/>
+
+                        <g class="planeta tierra">
+                            <animateMotion dur="45s" begin="-8s" repeatCount="indefinite">
+                                <mpath href="#orbita-tierra"/>
+                            </animateMotion>
+                            <circle r="30" fill="#1f5fa8"/>
+                            <g>
+                                <animateTransform attributeName="transform" type="rotate"
+                                                  from="0" to="360" dur="7s" repeatCount="indefinite"/>
+                                <circle cx="62" r="12" fill="#9a9a9a"/>
+                            </g>
+                        </g>
+
+                        <g class="planeta marte">
+                            <animateMotion dur="80s" begin="-30s" repeatCount="indefinite">
+                                <mpath href="#orbita-marte"/>
+                            </animateMotion>
+                            <circle r="28" fill="#8e2420"/>
+                        </g>
+
+                    </svg>
+                </div> <!-- cierra .sol -->
+            <div class="esquinas">
+                <a class="boton-evento" href="https://www.spaceappschallenge.org"
+                target="_blank" rel="noopener"
+                aria-label="Sitio oficial">
+                <span class="rojo">NASA</span>
+                <span>SPACE APPS CHALLENGE</span>
+                </a>
+
+                <a class="boton-equipo" href="https://www.spaceappschallenge.org/2026/find-a-team/dormant/" aria-label="Página del equipo Dormant">
+                </a>
+                
+            </div>
+            
+            <div class="t1">
+            <h1 class="palabra-grande" id="t3">ABANDONED</h1>
+            <h2 class="titulo">BUT NOT</h2>
+            <h2 class="palabra-grande" id="t4">FORGOTTEN</h2>
+            </div>
+            </div>
+
+            <div class="tarjetas">
+
+                <a class="tarjeta" href="luna.html">
+                    <div class="estrellas-tarjeta" aria-hidden="true"></div>
+                    <span class="rotulo" aria-hidden="true">MOON</span>
+                    <img src="img-vid_Principal/moon-removebg-preview.png" alt="Ir a la página de la Luna">
+                </a>
+
+                <a class="tarjeta" href="marte.html">
+                    <div class="estrellas-tarjeta" aria-hidden="true"></div>
+                    <span class="rotulo" aria-hidden="true">MARS</span>
+                    <img src="img-vid_Principal/mars-removebg-preview.png" alt="Ir a la página de Marte">
+                </a>
+
+            </div>
+        </div>
+    </section>
+
+    <script src="JS/main.js"></script>
+    
+
+</body>
+</html>

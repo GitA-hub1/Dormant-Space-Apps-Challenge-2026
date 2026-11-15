@@ -1,0 +1,34 @@
+@font-face {
+  font-family: "NASA TITULO";
+  src: url("../Text_Fonts/craze-retro/Craze Retro.ttf") format("truetype");
+  font-weight: 400;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Share Tech Mono";
+  src: url("../Text_Fonts/Share_Tech_Mono/ShareTechMono-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Orbitron";
+  src: url("../Text_Fonts/Orbitron/static/Orbitron-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Atkinson Hyperlegible";
+  src: url("../Text_Fonts/Atkinson_Hyperlegible/AtkinsonHyperlegible-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Steelfish";
+  src: url("../Text_Fonts/steelfish/Steelfish\ Rg.otf") format("Opentype");
+  font-weight: 400;
+  font-display: swap;
+}

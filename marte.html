@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mars | Dormant</title>
+
+    <link rel="stylesheet" href="CSS/fonts.css">
+    <link rel="stylesheet" href="CSS/styles.css">
+</head>
+<body class="pagina-luna pagina-marte">
+
+    <a class="btn-atras" href="index.html" aria-label="Volver a la portada">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 4 7 12l8 8" /></svg>
+    </a>
+
+    <!-- Todo lo que se difumina al abrir una misión va dentro de .escena -->
+    <main class="escena" id="escena">
+        <div class="fondo-estrellas" id="fondo-estrellas" aria-hidden="true"></div>
+        <!-- data-textura: imagen de la superficie. data-desfase: corrige la longitud si el mapa está girado -->
+        <canvas id="luna-canvas" data-textura="img-vid_Marte/marte-mapa.jpg" data-desfase="0"></canvas>
+        <div id="marcadores"></div>
+
+        <button class="flecha izq" id="btn-izq" aria-label="Girar Marte a la izquierda">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 3 6 12l9 9" /></svg>
+        </button>
+        <button class="flecha der" id="btn-der" aria-label="Girar Marte a la derecha">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 3 9 9-9 9" /></svg>
+        </button>
+    </main>
+
+    <div class="modal" id="modal" role="dialog" aria-modal="true" aria-labelledby="m-titulo" aria-hidden="true">
+        <div class="panel">
+            <header class="m-cab rev" style="--i:0">
+                <h2 id="m-titulo"></h2>
+                <div class="tabs" role="tablist" aria-label="Nivel de detalle">
+                    <button class="tab casual" id="tab-casual" role="tab" data-modo="casual" aria-selected="true">CASUAL</button>
+                    <button class="tab tecnico" id="tab-tecnico" role="tab" data-modo="tecnico" aria-selected="false">TECHNICAL</button>
+                </div>
+                <button class="cerrar" id="m-cerrar" aria-label="Cerrar">
+                    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 5l14 14M19 5 5 19" /></svg>
+                </button>
+            </header>
+
+            <div class="m-cuerpo">
+                <div class="m-texto rev" id="m-texto" role="tabpanel" style="--i:1"></div>
+                <figure class="m-fig rev" id="m-fig" style="--i:2">
+                    <img id="m-img" alt="">
+                    <figcaption id="m-credito"></figcaption>
+                </figure>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="JS/data-mars.js"></script>
+    <script src="JS/main.js"></script>
+</body>
+</html>
