@@ -15,12 +15,12 @@ const MISIONES = [
     lon: -23.42,
 
     casual: [
-      "Before humans arrived, NASA sent robots to test the terrain. Surveyor 3 landed in April 1967 in the Ocean of Storms and, using a camera and a small scoop, transmitted photos and data regarding how firm the lunar surface was.",
-      "Two years later, the Apollo 12 astronauts landed less than 200 meters away, walked over to it, and took some parts back to study how it had aged on the Moon. The rest of the probe remains there—abandoned, but not forgotten."
+      "Antes de que llegaran las personas, la NASA envió robots a probar el terreno. Surveyor 3 aterrizó en abril de 1967 en el Océano de las Tormentas y, con una cámara y una pequeña pala, mandó fotos y datos sobre qué tan firme era el suelo lunar.",
+      "Dos años después, los astronautas del Apollo 12 aterrizaron a menos de 200 metros, caminaron hasta ella y se llevaron algunas piezas para estudiar cómo había envejecido en la Luna. El resto de la sonda sigue ahí: abandonada, pero no olvidada."
     ],
     tecnico: [
-      "Surveyor 3 was launched on April 17, 1967, and landed on April 20 in Oceanus Procellarum (approx. 3.01° S, 23.42° W). The landing was rough: the probe bounced twice before coming to a stop. It carried a television camera and an arm equipped with a scoop (Surface Sampler) for soil mechanics testing.",
-      "In November 1969, Pete Conrad and Alan Bean (Apollo 12) recovered the camera, part of the sampling arm, and other components (approximately 10 kg) in order to analyze the effects of the vacuum, radiation, and temperature fluctuations on the materials after more than two years on the surface."
+      "Surveyor 3 se lanzó el 17 de abril de 1967 y se posó el 20 de abril en Oceanus Procellarum (aprox. 3.01° S, 23.42° O). El aterrizaje fue accidentado: la sonda rebotó dos veces antes de detenerse. Llevaba una cámara de televisión y un brazo con una pala (Surface Sampler) para pruebas de mecánica de suelos.",
+      "En noviembre de 1969, Pete Conrad y Alan Bean (Apollo 12) recuperaron la cámara, parte del brazo muestreador y otras piezas (unos 10 kg) para analizar los efectos del vacío, la radiación y los cambios de temperatura sobre los materiales tras más de dos años en la superficie."
     ],
 
     imagen: {
@@ -28,12 +28,12 @@ const MISIONES = [
       tecnico: "img-vid_Luna/surveyor3-tecnico.png"
     },
     alt: {
-      casual:  "An Apollo 12 astronaut next to the Surveyor 3 probe, with the lunar module in the background",
-      tecnico: "Astronauts practicing with a replica of Surveyor 3 before the mission"
+      casual:  "Un astronauta del Apollo 12 junto a la sonda Surveyor 3, con el módulo lunar al fondo",
+      tecnico: "Astronautas practicando con una réplica de Surveyor 3 antes de la misión"
     },
     credito: {
-      casual:  "Credits: NASA",
-      tecnico: "Credits: NASA"
+      casual:  "Crédito: NASA",
+      tecnico: "Crédito: NASA"
     }
   },
 
@@ -44,12 +44,12 @@ const MISIONES = [
     lon: 23.47,
 
     casual: [
-      "On July 20, 1969, Neil Armstrong and Buzz Aldrin became the first people to set foot on the Moon, in the Sea of ​​Tranquility, while Michael Collins waited for them in orbit.",
-      "They spent a little over 21 hours on the surface: they collected rocks, planted a flag, and left behind scientific instruments. When they returned, the lower part of the lunar module EAGLE and several other objects remained there."
+      "El 20 de julio de 1969, Neil Armstrong y Buzz Aldrin se convirtieron en las primeras personas en pisar la Luna, en el Mar de la Tranquilidad, mientras Michael Collins los esperaba en órbita.",
+      "Estuvieron poco más de 21 horas en la superficie: recogieron rocas, plantaron una bandera y dejaron instrumentos científicos. Cuando regresaron, la parte inferior del módulo lunar Eagle y varios objetos más se quedaron allí."
     ],
     tecnico: [
-      "Apollo 11 landed in Mare Tranquillitatis (approx. 0.67° N, 23.47° E). ​​The extravehicular activity lasted nearly 2 hours and 31 minutes; approximately 21.5 kg of samples were collected, and the EASEP package—which included a passive seismometer and a laser retroreflector (LRRR)—was deployed.",
-      "Retroreflectors make it possible to measure the Earth–Moon distance by sending laser pulses from Earth and timing how long they take to return. They remain in use decades later. The module’s descent stage was left on the surface, serving as a launch platform for the ascent stage."
+      "Apollo 11 aterrizó en Mare Tranquillitatis (aprox. 0.67° N, 23.47° E). La actividad extravehicular duró cerca de 2 h 31 min, se recolectaron unos 21.5 kg de muestras y se desplegó el paquete EASEP, que incluía un sismómetro pasivo y un retrorreflector láser (LRRR).",
+      "Los retrorreflectores permiten medir la distancia Tierra–Luna enviando pulsos láser desde la Tierra y midiendo cuánto tardan en regresar. Siguen utilizándose décadas después. La etapa de descenso del módulo quedó en la superficie como plataforma de lanzamiento de la etapa de ascenso."
     ],
 
     imagen: {
@@ -57,12 +57,12 @@ const MISIONES = [
       tecnico: "img-vid_Luna/apollo11-tecnico.png"
     },
     alt: {
-      casual:  "The lunar module Eagle on the surface, with an astronaut beside it",
-      tecnico: "An astronaut carrying two packages of scientific instruments on the lunar surface"
+      casual:  "El módulo lunar Eagle sobre la superficie, con un astronauta junto a él",
+      tecnico: "Un astronauta cargando dos paquetes de instrumentos científicos sobre la superficie lunar"
     },
     credito: {
-      casual:  "Credits: NASA",
-      tecnico: "Credits: NASA"
+      casual:  "Crédito: NASA",
+      tecnico: "Crédito: NASA"
     }
   },
 
@@ -74,12 +74,12 @@ const MISIONES = [
     lon: -27.86,
 
     casual: [
-      "Apollo 13 was intended to be the third mission to land on the Moon, but on April 13, 1970—more than 300,000 km from Earth—an oxygen tank in the service module exploded. Jim Lovell, Jack Swigert, and Fred Haise had to use the lunar module AQUARIUS as a lifeboat.",
-      "They orbited the Moon without landing and returned safely to Earth on April 17. What was left behind: the service module and AQUARIUS were jettisoned before the return, and the S-IVB stage of the rocket was crashed into the lunar surface."
+      "Apollo 13 iba a ser la tercera misión en aterrizar en la Luna, pero el 13 de abril de 1970, a más de 300,000 km de la Tierra, explotó un tanque de oxígeno del módulo de servicio. Jim Lovell, Jack Swigert y Fred Haise tuvieron que usar el módulo lunar Aquarius como bote salvavidas.",
+      "Rodearon la Luna sin aterrizar y regresaron sanos y salvos a la Tierra el 17 de abril. Lo que se quedó atrás: el módulo de servicio y Aquarius se desecharon antes de volver, y la etapa S-IVB del cohete fue estrellada contra la superficie lunar."
     ],
     tecnico: [
-      "The explosion of oxygen tank 2 occurred 55 hours and 55 minutes into the mission, leaving the command module without sufficient power or oxygen. The crew moved into the lunar module, remained on a free-return trajectory around the Moon, and used the AQUARIUS lunar module’s descent engine to accelerate their return. Additionally, they adapted CO2 scrubbers using materials on board to keep the air breathable.",
-      "On April 14, 1970, the S-IVB stage was intentionally crashed into the Moon (approximately 2.75° S, 27.86° W). The seismometer left behind by Apollo 12 recorded the vibrations for more than three hours, providing data on the Moon's internal structure."
+      "La explosión del tanque de oxígeno 2 ocurrió a las 55 h 55 min de misión y dejó al módulo de mando sin energía ni oxígeno suficientes. La tripulación pasó al módulo lunar, se mantuvo en una trayectoria de regreso libre alrededor de la Luna y usó el motor de descenso de Aquarius para acelerar el regreso. Además adaptaron filtros de CO2 con materiales a bordo para mantener el aire respirable.",
+      "El 14 de abril de 1970, la etapa S-IVB se impactó a propósito en la Luna (aprox. 2.75° S, 27.86° O). El sismómetro que dejó el Apollo 12 registró las vibraciones durante más de tres horas, lo que aportó datos sobre la estructura interna de la Luna."
     ],
 
     imagen: {
@@ -87,12 +87,12 @@ const MISIONES = [
       tecnico: "img-vid_Luna/apollo13-tecnico.jpeg"
     },
     alt: {
-      casual:  "The Apollo 13 command module being recovered aboard the ship, with Navy crew members nearby",
-      tecnico: "The Apollo 13 service module, damaged by the explosion, photographed after separating"
+      casual:  "El módulo de mando del Apollo 13 siendo recuperado a bordo del barco, con la tripulación de la Marina alrededor",
+      tecnico: "El módulo de servicio del Apollo 13 dañado por la explosión, fotografiado tras separarse"
     },
     credito: {
-      casual:  "Credits: NASA",
-      tecnico: "Credits: NASA"
+      casual:  "Crédito: NASA",
+      tecnico: "Crédito: NASA"
     }
   },
 
@@ -103,12 +103,12 @@ const MISIONES = [
     lon: -17.47,
 
     casual: [
-      "In February 1971, Apollo 14 arrived at Fra Mauro—the very site that Apollo 13 had failed to reach. Alan Shepard, the first American to travel into space, and Edgar Mitchell walked on the Moon, while Stuart Roosa waited for them in orbit.",
-      "Shepard even hit two golf balls with an improvised tool, and Mitchell threw a tool handle as if it were a javelin. Before leaving, they left behind scientific instruments and a small tool cart, which remain there to this day."
+      "En febrero de 1971, Apollo 14 llegó a Fra Mauro, el mismo lugar que Apollo 13 no pudo alcanzar. Alan Shepard, el primer estadounidense en viajar al espacio, y Edgar Mitchell caminaron por la Luna mientras Stuart Roosa los esperaba en órbita.",
+      "Shepard incluso golpeó dos pelotas de golf con una herramienta adaptada, y Mitchell lanzó un mango de herramienta como si fuera una jabalina. Antes de irse, dejaron instrumentos científicos y un pequeño carrito de herramientas que sigue allí."
     ],
     tecnico: [
-      "Apollo 14 landed on February 5, 1971, at Fra Mauro (approx. 3.65° S, 17.47° W). There were two EVAs, totaling about 9 hours and 23 minutes, which yielded nearly 42.8 kg of samples. The crew used the MET (Modular Equipment Transporter)—a two-wheeled handcart—to transport tools and samples.",
-      "They deployed an ALSEP station with instruments such as a passive seismometer and an active seismology experiment, as well as a laser retroreflector. They attempted to reach the edge of Cone Crater, but did not succeed in reaching it."
+      "Apollo 14 aterrizó el 5 de febrero de 1971 en Fra Mauro (aprox. 3.65° S, 17.47° O). Fueron dos EVA con unas 9 h 23 min en total y cerca de 42.8 kg de muestras. Usaron el MET (Modular Equipment Transporter), un carrito de mano de dos ruedas, para transportar herramientas y muestras.",
+      "Desplegaron una estación ALSEP con instrumentos como un sismómetro pasivo y un experimento de sismología activa, además de un retrorreflector láser. Intentaron llegar al borde del cráter Cone, pero no lograron alcanzarlo."
     ],
 
     imagen: {
@@ -116,12 +116,12 @@ const MISIONES = [
       tecnico: "img-vid_Luna/apollo14-tecnico.png"
     },
     alt: {
-      casual:  "Apollo 14 on the lunar surface",
-      tecnico: "Apollo 14 scientific team on the Moon"
+      casual:  "Apollo 14 sobre la superficie lunar",
+      tecnico: "Equipo científico del Apollo 14 en la Luna"
     },
     credito: {
-      casual:  "Credits: NASA",
-      tecnico: "Credits: NASA"
+      casual:  "Crédito: NASA",
+      tecnico: "Crédito: NASA"
     }
   },
 
@@ -132,12 +132,12 @@ const MISIONES = [
     lon: 3.63,
 
     casual: [
-      "In July 1971, Apollo 15 carried a lunar vehicle—the Lunar Roving Vehicle—for the first time. Thanks to it, David Scott and James Irwin were able to explore much further than their predecessors, near a massive, winding channel called Hadley Rille, at the foot of the lunar Apennine Mountains.",
-      "They brought about 77 kg of rocks back to Earth and left behind the parked rover, as well as a small figurine called. Fallen Astronaut, in memory of deceased astronauts and cosmonauts."
+      "En julio de 1971, Apollo 15 llevó por primera vez un vehículo lunar, el Lunar Roving Vehicle. Gracias a él, David Scott y James Irwin pudieron explorar mucho más lejos que sus antecesores, cerca de un enorme canal sinuoso llamado Hadley Rille, al pie de los Apeninos lunares.",
+      "Trajeron a la Tierra unos 77 kg de rocas y dejaron atrás el rover estacionado, además de una pequeña figura llamada \"Fallen Astronaut\", en memoria de astronautas y cosmonautas fallecidos."
     ],
     tecnico: [
-      "It landed on July 30, 1971, in the Hadley–Apennine region (approx. 26.13° N, 3.63° E). ​​Over the course of three extravehicular activities (EVAs), the rover covered a total of about 28 km, and the crew spent nearly 66 hours on the surface.",
-      "The map shows the route for each EVA: EVA 1 toward the edge of Hadley Rille and the Apennine Front, EVA 2 toward the south, and EVA 3 toward the north. Approximately 77 kg of samples were collected."
+      "Aterrizó el 30 de julio de 1971 en la región Hadley–Apennine (aprox. 26.13° N, 3.63° E). En tres actividades extravehiculares (EVA) el rover recorrió unos 28 km en total, y la tripulación pasó cerca de 66 horas en la superficie.",
+      "El mapa muestra la ruta de cada EVA: la EVA 1 hacia el borde de Hadley Rille y el frente de los Apeninos, la EVA 2 hacia el sur y la EVA 3 hacia el norte. Se recolectaron aproximadamente 77 kg de muestras."
     ],
 
     imagen: {
@@ -145,12 +145,12 @@ const MISIONES = [
       tecnico: "img-vid_Luna/apollo15-tecnico.png"
     },
     alt: {
-      casual:  "Launch of the Saturn V rocket for Apollo 15",
-      tecnico: "Map of the routes taken during the three Apollo 15 EVAs near Hadley Rille"
+      casual:  "Lanzamiento del cohete Saturno V del Apollo 15",
+      tecnico: "Mapa de las rutas recorridas en las tres EVA del Apollo 15 junto a Hadley Rille"
     },
     credito: {
-      casual:  "Credits: NASA",
-      tecnico: "Credits: NASA"
+      casual:  "Crédito: NASA",
+      tecnico: "Crédito: NASA"
     }
   },
 
@@ -161,12 +161,12 @@ const MISIONES = [
     lon: 15.50,
 
     casual: [
-      "In April 1972, John Young and Charles Duke landed in the Descartes Highlands, while Ken Mattingly awaited them in orbit. Scientists hoped to find rocks of volcanic origin in that area.",
-      "But the rocks told a different story: they consisted primarily of material formed by meteorite impacts. This discovery changed existing ideas about the Moon’s geology. Upon its departure, the mission left the rover and several instruments at the site."
+      "En abril de 1972, John Young y Charles Duke aterrizaron en las tierras altas de Descartes mientras Ken Mattingly los esperaba en órbita. Los científicos esperaban encontrar rocas de origen volcánico en esa zona.",
+      "Pero las rocas contaron otra historia: eran sobre todo material formado por impactos de meteoritos. Ese descubrimiento cambió lo que se pensaba sobre la geología de la Luna. Al despedirse, la misión dejó el rover y varios instrumentos en el sitio."
     ],
     tecnico: [
-      "Apollo 16 landed on April 21, 1972, in the Descartes Highlands (approx. 8.97° S, 15.50° E). ​​There were three EVAs, about 71 hours spent on the surface, and approximately 26.7 km covered using the LRV, with about 95.8 kg of samples collected.",
-      "The map indicates the locations visited, such as the North Ray and South Ray craters and the areas of Stone Mountain and Smoky Mountain. The results showed that the highlands were not of volcanic origin, as had been proposed."
+      "Apollo 16 aterrizó el 21 de abril de 1972 en las Descartes Highlands (aprox. 8.97° S, 15.50° E). Fueron tres EVA, unas 71 horas en la superficie y unos 26.7 km recorridos con el LRV, con aproximadamente 95.8 kg de muestras recolectadas.",
+      "El mapa señala los puntos visitados, como los cráteres North Ray y South Ray y las zonas de Stone Mountain y Smoky Mountain. Los resultados mostraron que las tierras altas no eran de origen volcánico como se había planteado."
     ],
 
     imagen: {
@@ -174,12 +174,12 @@ const MISIONES = [
       tecnico: "img-vid_Luna/apollo16-tecnico.png"
     },
     alt: {
-      casual:  "An Apollo 16 astronaut on the lunar surface with the rover in the background",
-      tecnico: "Map of the Apollo 16 routes in the Descartes Highlands"
+      casual:  "Un astronauta del Apollo 16 sobre la superficie lunar con el rover al fondo",
+      tecnico: "Mapa de las rutas del Apollo 16 en las tierras altas de Descartes"
     },
     credito: {
-      casual:  "Credits: NASA",
-      tecnico: "Credits: NASA"
+      casual:  "Crédito: NASA",
+      tecnico: "Crédito: NASA"
     }
   },
 
@@ -190,12 +190,12 @@ const MISIONES = [
     lon: 30.77,
 
     casual: [
-      "In December 1972, Eugene Cernan and Harrison Schmitt—the first geologist to set foot on the Moon—landed in the Taurus–Littrow valley. It was the last crewed mission to the Moon; no one has walked there since.",
-      "Before boarding the module, Cernan wrote the initials of his daughter, Tracy, in the dust. The footprints, the rover, and the module remain in the valley, intact, because there is no wind or rain on the Moon to erase them."
+      "En diciembre de 1972, Eugene Cernan y Harrison Schmitt, el primer geólogo en pisar la Luna, aterrizaron en el valle Taurus–Littrow. Fue la última misión tripulada a la Luna: desde entonces nadie ha vuelto a caminar allí.",
+      "Antes de subir al módulo, Cernan escribió en el polvo las iniciales de su hija Tracy. Las huellas, el rover y el módulo siguen en el valle, intactos, porque en la Luna no hay viento ni lluvia que los borren."
     ],
     tecnico: [
-      "Apollo 17 landed on December 11, 1972, in the Taurus–Littrow valley (approx. 20.19° N, 30.77° E). ​​There were three EVAs, nearly 75 hours spent on the surface, and approximately 35.7 km covered using the LRV, with about 110 kg of samples collected.",
-      "The map shows the stations visited between the North and South massifs, the Lee–Lincoln scarp, and craters such as Shorty. Among the findings, the orange soil—composed of tiny glass spheres of volcanic origin—stands out."
+      "Apollo 17 aterrizó el 11 de diciembre de 1972 en el valle Taurus–Littrow (aprox. 20.19° N, 30.77° E). Fueron tres EVA, cerca de 75 horas en la superficie y unos 35.7 km recorridos con el LRV, con aproximadamente 110 kg de muestras.",
+      "El mapa muestra las estaciones visitadas entre los macizos Norte y Sur, la escarpa Lee–Lincoln y los cráteres como Shorty. Entre los hallazgos destaca el suelo anaranjado, formado por pequeñas esferas de vidrio de origen volcánico."
     ],
 
     imagen: {
@@ -203,12 +203,12 @@ const MISIONES = [
       tecnico: "img-vid_Luna/apollo17-tecnico.png"
     },
     alt: {
-      casual:  "An Apollo 17 astronaut next to the United States flag, with the lunar module and the rover in the background",
-      tecnico: "Map of the Apollo 17 routes in the Taurus–Littrow valley"
+      casual:  "Un astronauta del Apollo 17 junto a la bandera de Estados Unidos, con el módulo lunar y el rover al fondo",
+      tecnico: "Mapa de las rutas del Apollo 17 en el valle Taurus–Littrow"
     },
     credito: {
-      casual:  "Credits: NASA",
-      tecnico: "Credits: NASA"
+      casual:  "Crédito: NASA",
+      tecnico: "Crédito: NASA"
     }
   }
 ];
