@@ -133,7 +133,7 @@ const MISIONES = [
 
     casual: [
       "In July 1971, Apollo 15 carried a lunar vehicle—the Lunar Roving Vehicle—for the first time. Thanks to it, David Scott and James Irwin were able to explore much further than their predecessors, near a massive, winding channel called Hadley Rille, at the foot of the lunar Apennine Mountains.",
-      "They brought about 77 kg of rocks back to Earth and left behind the parked rover, as well as a small figurine called "Fallen Astronaut," in memory of deceased astronauts and cosmonauts."
+      "They brought about 77 kg of rocks back to Earth and left behind the parked rover, as well as a small figurine called. Fallen Astronaut, in memory of deceased astronauts and cosmonauts."
     ],
     tecnico: [
       "It landed on July 30, 1971, in the Hadley–Apennine region (approx. 26.13° N, 3.63° E). ​​Over the course of three extravehicular activities (EVAs), the rover covered a total of about 28 km, and the crew spent nearly 66 hours on the surface.",
@@ -146,7 +146,7 @@ const MISIONES = [
     },
     alt: {
       casual:  "Launch of the Saturn V rocket for Apollo 15",
-      tecnico: "MMap of the routes taken during the three Apollo 15 EVAs near Hadley Rille"
+      tecnico: "Map of the routes taken during the three Apollo 15 EVAs near Hadley Rille"
     },
     credito: {
       casual:  "Credits: NASA",
